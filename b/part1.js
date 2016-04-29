@@ -1,4 +1,5 @@
 var _ = this._ || {};
+var window = this;
 var aaa, baa, caa, daa, eaa, faa, gaa, haa, iaa, jaa, kaa, laa, maa, naa, saa, uaa, vaa, yaa, Caa, Eaa, Faa, Iaa, Jaa, Laa, Maa, Oaa, Qaa, Raa, Saa, Uaa, Vaa, Xaa, bba, gba, hba, kba, mba, nba, oba, pba, tba, uba, vba, wba;
   _.e = "";
   _.aa = "\n";
