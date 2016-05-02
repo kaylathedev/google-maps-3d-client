@@ -1,5 +1,6 @@
 <?php
 set_time_limit(60);
+ini_set('memory_limit', '256M'); //TODO: Analyze memory usage instead of increasing limit
 
 $variable = [
   "HbC7FRYovGY",
@@ -75,10 +76,18 @@ function processGoogleMapsScript($content) {
     $content = str_replace($search, $substitute, $content);
   }
 
+  $properties = [
+    'background',
+    'border(-(top|left|right|bottom))?',
+    'display',
+    '-webkit(-[A-z])+',
+  ];
+  $regex = '/(' . implode('|', $properties) . ")${colon}[^;\"\{\}]+;/";
+  $content = preg_replace($regex, '', $content);
 
   // Regex replacments
   $replacements = [
-    ["border(-(top|left|right|bottom))?(-[a-z]+)?${colon}[^;\"\{\}]+;", ""],
+    ["(background|display|border(-(top|left|right|bottom))?)(-[a-z]+)?${colon}[^;\"\{\}]+;", ""],
     //['/\n\}\)\(this\._\);\n/', "\n"], // Removes last function definition
     ["((top|left|right|bottom|width|height|z-index|margin|padding):$value;)", ""],
     ["((top|left|right|bottom|width|height|z-index|margin|padding):$value\}\")", "\}\""],
