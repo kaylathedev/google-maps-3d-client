@@ -2,7 +2,11 @@
 
 $c = create_function('$a', 'return $a;');
 
-define('R_CSS_NUMERIC', '([0-9]+(px|%|em)|0)');
+define('R_CSS_NAME', '(#|\.)[A-z]+(-[A-z]+)*(:{1,2}[a-z]+)?');
+define('R_CSS_SELECTOR', "{$c(R_CSS_NAME)}(\s*{$c(R_CSS_NAME)})*");
+define('R_CSS_MANY_SELECTORS', "{$c(R_CSS_SELECTOR)}(\s*,\s*{$c(R_CSS_SELECTOR)})*");
+
+define('R_CSS_NUMERIC', '(-?[0-9]+(px|%|em)|0)');
 define('R_CSS_SINGLE_VALUE', "({$c(R_CSS_NUMERIC)}|auto)");
 define('R_CSS_MANY_VALUES', "({$c(R_CSS_SINGLE_VALUE)}(\s+{$c(R_CSS_SINGLE_VALUE)})*)");
 define('R_CSS_VALUE', "({$c(R_CSS_MANY_VALUES)}(\s*!important)?)");
