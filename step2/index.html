@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript">
+var zooms = {
+  tree: 100,
+  building: 300,
+  street: 1000,
+  town: 10000,
+  city: 80000,
+  state: 3000000,
+  nation: 9000000,
+  globe: 40000000,
+};
+var places = {
+  TopOfTheWorldYorkPA: {
+    lat: 39.930,
+    lon: -76.728,
+    heading: 315,
+    tilt: 80,
+    height: 150,
+  },
+  YorkCollege: {
+    lat: 39.9458,
+    lon: -76.7289,
+    heading: 5,
+    tilt: 30,
+    height: zooms.building,
+  },
+};
+var place = places.YorkCollege;
+var lat = place.lat;
+var lon = place.lon;
+var heading = place.heading; // North is 0. East is 90.
+var tilt = place.tilt; // Straight down is 0. Looking at horizon is 90.
+var height = place.height; // Distance above ground. Is this meters?
+window.APP_INITIALIZATION_STATE=[
+  [[28.0,lon,lat]],
+  [[["m"]]],
+  ,,,
+  [,,[3,[,lon,lat,,height,,20.0,heading,tilt]]],
+  ,,
+  [59,60,61,63,66,65]
+];
+
+this._ = this._ || {};
+var window = this;
+
+window.globals = {};
+window.globals.ErrorHandler = {};
+window.globals.ErrorHandler.log = function(a) {
+  return a;
+};
+_._DumpException = function(a) {
+  throw a;
+};
+
+window.history.pushState = function() {};
+window.history.replaceState = function() {};
+
+_.uc = function () {};
+_.sc = function () {};
+
+var $mb = function (a, b, c) {
+	c.T = a.R.H[c.S].elements;
+	c.H = c.T[3];
+
+	var isNull = null == a.H;
+	if (isNull) {
+		a.H = _.e;
+	}
+	tD(a, c, undefined);
+	if (isNull) {
+		c.ud.element.innerHTML = a.H;
+	}
+};
+
+var yca = function () {
+	return function (a) {
+		_.t.setTimeout(a, 0)
+	}
+};
+
+var iAc = function (a) {};
+
+_.Fc = function (list, b, c) {
+	for (var d in list) {
+    b.call(c, list[d], d, list)
+  }
+};
+
+_.hKb = function (scriptUrl) {
+	var element = window.document.createElement("SCRIPT");
+	var h = new _.pd();
+	window.setTimeout(function () {
+	  h.W[1][1].call();
+	}, 0); // Was set to 5000.
+	element.setAttribute("type", "text/javascript");
+	element.setAttribute("src", scriptUrl);
+	window.document.documentElement.appendChild(element);
+	return h;
+};
+
+_.Nqc = function (a, b, c, d, f) {
+	// Appears to control width/height of drawing area inside canvas
+	var g = a.mh;
+
+	Oqc = window.document.createElement("canvas").getContext("2d").webkitBackingStorePixelRatio || 1;
+	var h = c / Oqc;
+
+	var l = Math.max(d * h, 1);
+	var h = Math.max(f * h, 1);
+	g.width = l;
+	g.height = h;
+};
+
+_.pd = function (a, b) {
+	this.W = [];
+};
+_.pd.prototype.cancel = function (a) {
+};
+_.pd.prototype.H = function (a) {
+	Hda(this, false, a)
+};
+_.qd = function (a, b, c, d) {
+	a.W.push([b, c, d]);
+};
+
+
+var Czc = function () {};
+var eAc = function (a) {
+  this.S = a;
+  this.R = new LC;
+  this.T = "t-ZCACkk-Ca5o";
+
+  if (!_.Y(a, "t-ZCACkk-Ca5o")) {
+    _.Z(a, "t-ZCACkk-Ca5o",{},   [,,,[,,"$a",[0,,,,"app-container","id"]],["",[,,,[,,"$a",[0,,,,"lightbox","id"]]],"",[,,,[,,"$a",[0,,,,"content-container","id",,],,],["",[,,,["$a",[],"$a",[0,,,,"scene","id"],,],["",[,,,[,,"$up",["t-rLHcS5b1nEo"]]]]]]]]],[],   []   );
+    if (!_.Y(a, "t-rLHcS5b1nEo")) {
+      _.Z(a, "t-rLHcS5b1nEo", {},    [,0,,["$a",[0,,,,"splash-div","id"]]],[], []);
+    }
+  }
+};
+
+var xmb = function (elements, g) {
+  if (typeof elements[3] == "number") {
+    var tempElement = elements[3];
+    elements[3] = g[tempElement];
+  }
+  var tempElement = elements[4];
+  if (tempElement && typeof tempElement != "string") {
+    for (var d = 0; d < tempElement.length; ++d) {
+      if (tempElement[d] && typeof tempElement[d] != "string") {
+        xmb(tempElement[d], g);
+      }
+    }
+  }
+};
+
+_.Z = function (a, b, c, elements, f, g) {
+  if (g.length > 0) {
+    console.log(g);
+  }
+  xmb(elements, g);
+  g = [];
+  for (var l in c) {
+    g[c[l]] = l;
+  }
+  a.H[b] = {
+    elements: elements,
+    m2: [],
+    Zu: g,
+  };
+};
+
+
+_.z = function(name) {
+	var b = _.rd.HI;
+
+	var tempA = b.H[name];
+	var tempB = _.v(b.La);
+	var c = new tempA.R;
+	c.initialize(tempB());
+	tempA.S = c;
+
+	var c = Array.prototype.indexOf.call(b.T, name);
+	if (c >= 0) {
+		Array.prototype.splice.call(b.T, c, 1)
+	}
+
+	if (0 == b.T.length) {
+
+		while (b.R.length > 0) {
+			var m = Array.prototype.filter.call(b.R.shift(), function (b) {
+				return !this.H[b].Ae()
+			}, b);
+			if (0 < m.length) {
+				b.Ja(m);
+				break;
+			}
+		}
+
+	}
+};
+_.Sda = function (a, b, c) {
+	var d = [];
+	_.Dc(b, d);
+	b = [];
+	for (var f = {}, g = 0; g < d.length; g++) {
+		var h = d[g],
+			l = a.H[h];
+		var n = new _.pd;
+		f[h] = n;
+		b.push(h)
+	}
+	0 < b.length && (0 == a.T.length ? a.Ja(b) : (a.R.push(b), sd(a)));
+	return f
+};
+_.uLa = function (a) {};
+
+_.AD = function (a, body) {
+  var cT = a.T;
+  if (a.S.document()) {
+    var d = a.S.document().createElement(a.S.H[cT].elements[0]);
+    d.setAttribute("jsl", "$u " + cT + ";");
+    cT = d;
+  }
+  a.H = cT;
+  if (body) {
+    body.appendChild(cT);
+  }
+};
+
+_.zzz = function(name) {
+	try {
+		_.z(name);
+	} catch (e) {
+    throw e;
+	}
+};
+
+var moduleString = 'npm/sy0/sy1/sy25/sy26/sy27/sy28/sy29/sy30/sy43/sy34/sy39/sy40/sy41/sy42/sy2/sy20/sy3/sy4/sy5/sy6/sy9/sy10/sy12/sy11/sy7/sy8/sy13/sy14/sy18/sy17/sy15/sy19/sy31/sy32/sy33/sy35/sy36/sy37/sy38/sy44/sy45/sy46/sy48/sy49/sy50/sy51/sy53/sy54/sy52/sy47/sy55/sy56/sy57/sy58/sy60/sy59/sy61/sy64/sy66/sy65/sy63/sy62/sy67/sy70/sy71/sy69/sy72/acm/sy73/sy74/sy75/sy78/sy79/sy80/sy81/sy82/ads/sy83/sy84/sy85/sy86/sy87/sy88/sy89/sy92/sy93/sy95/sy96/sy94/sy90/sy91/sy97/sy99/sy100:2j/sy101/sy103/sy104/sy102/sy105/sy106/sy107/sy108/ls/sy131/sy156/sy167/sy170/sy169/sy120/sy168/sy172/sy181/sy174/sy178/sy179/sy177/sy180/sy173/sy176/sy117/sy175/sy182/sy128/sy183/sy184/sy186/sy185/sy187/sy188/sy166/sy110/sy112/sy113/sy114/sy115/sy116/sy118/sy119/sy132/sy127/sy122/sy123/sy125/sy126/sy129/sy130/sy133/als/sy134/sy139/sy140/sy147/sy148/sy146/sy149/sy150/sy144/sy152/sy151/sy153/sy135/sy136/sy138/sy137/sy141/sy142/sy143/sy145:4d,4i,4m/an/sy157/sy162/sy307/sy163/sy164/sy165/sy189/sy190/sy192/sy193/sy194/sy196/sy197/sy198/sy199/sy200/sy201/sy202/sy203/sy205/sy208/sy209/sy207/sy206/sy210/sy204:p,1u,20,27,58,5d,5e/sy212/sy213/sy211/sy214/sy215/sy218/sy339/sy340/sy341/sy221/sy220/sy219/sy342/sy343/sy344/sy345/sy348/sy217:u,1h,1r,1z,20,2b,2w,4q,4u,5l,5m,5o,5r,5s,5t,5u,5v,5w/sy222/sy224/sy223/sy225/sy226/sy228/sy229/sy230/sy231/sy262/sy359/sy232/sy233/sy234/sy235/sy236:6c/sy237/sy238/sy239/sy240/sy241/sy242/sy243/sy244/sy245/sy246:6m/sy247/sy248/sy249/sy250/sy251/sy252/sy255/sy254/sy258/sy260/sy259/sy261/sy257/sy263/sy269/sy253/sy264/sy265/sy266/sy267/sy268/sy270/sy272/sy274/sy276/sy275/sy277/sy278/sy279/sy280/sy281/sy282/sy283/sy287/sy288/sy289/sy290/sy291/sy292/sy293/sy294/sy295/sy296/sy297/sy298/sy299/sy300/sy301/sy302/sy303/sy304/sy305/sy306/sy308/sy310/sy311/sy312/sy313/sy314/sy315/sy316/sy317/sy318/sy319/sy320:10,86,8a,8b,8c,8d,8f/sy321/sy322:89/sy323/sy324/sy325/sy326/sy327/sy328/sy329/sy331/sy332/sy333/sy334/sy335/sy336/sy337/sy346/sy347/sy349/sy350/sy351/sy352/sy353/sy354/sy355/sy356/sy357/sy358/sy360/sy361/sy362/sy363/sy364/sy365/sy367/sy368/sy369/sy370/sy371/sy372/sy373/sy374/sy375:o,1z,3v,55,9m/sy376/sy378/sy379/sy380/sy381/sy382/sy383/sy384/sy385/a:1,w,1v,23,24,2l,2m,2n,2s,3s,3u,3y,3z,41,42,45,4t,4w,4z,50,53,54,57,5f,5j,5k,5x,61,62,63,64,69,6b,6d,6e,6f,6g,6h,6i,6j,6k,6l,6n,6o,6p,6q,6r,6s,6t,73,74,75,76,77,79,7a,7b,7d,7e,7f,7h,7i,7j,7k,7l,7m,7n,7o,7p,7q,7r,7s,7t,7u,7v,7w,7x,7y,7z,80,81,82,83,84,85,8g,8h,8k,8n,8o,8p,8q,8r,8s,8t,8u,8v,8w,8x,8y,8z,90,91,92,93,94,95,96,97,98,99,9a,9b,9c,9e,9f,9g,9h,9i,9j,9k,9l,9n,9o,9p,9q,9r,9s,9t,9u,9v,9w/as/sy387//sy389/bfp/sy390/sy391/bmm/sy392/sy393/bml/sy394/sy395/bom/sy396//sy398/sy399/sy400/sy402/sy403/sy404/sy405/sy406/sy407/sy408/sy410/sy409/sy411/sy412/sy413/sy414//sy416/sy417/sy418/sy419/sy420/sy421/sy422/sy423/sy424/sy426/b/sy427/brw/sy428/bsl/sy429//sy430/sy433/sy434/sy436/sy435/sy437/sy438/sy439/sy441/sy444/sy445/sy447/sy446/sy432//sy442/sy443/cpr/sy448/sy450/chr/sy451/sy452/sy453/cts/sy455/cp:1,u,1h,1z,3s,3w,57,6e,76,7h,c1/con/sy456/sy457/log/sy458/sy459/sy460/sy461/sy462/sy463//sy465/rvm/sy466/sy467/sy468/sy471/sy472/sy473/sy475/sy476/sy478/sy479/sy480/sy482/sy483/sy484/sy485/sy486/sc:1,k,1z,3s,3v,3w,41,4r,4v,4x,4z,55,57,5e,5k,5r,5s,6g,6v,7h,86,8b,8x,af,al,c1,c8,c9,cg,ch,ci,cj,ck,cl,cm,cn,co,cp,cq,cr,cs,ct,cu,cv/cmw/sy488/sy490/sy491/sy487/sy489/sy492/ucs/sy493/sy494/uts/deb/sy495/sy496/sy497:n,12,da/sy498/sy502/sy503/sy499/sy510/sy509/sy500/sy504/sy506/sy507/sy505:n,49,4d,4x,6x,8i,dk,dl/sy508/sy512/sy513/dvw/sy514/sy515/sy516/sy517/sy520/sy521/sy519/sy518/sy522/sy523/sy524/sy525//dsi//sy537/sy538/sy539/sy541/sy540/sy543/sy542/sy544/sy536///sy547/sy527/sy528/sy529/sy530/sy531/sy532/sy533/sy534/sy548/sy549/sy550/sy551/sy552/sy553/sy555/sy535/sy554/sy556/sy557/sy558/sy559/pdm/sy560/sy561/sy562/ptd/sy563/sy564/sy565/sy566/sy567/sy568/sy569/sy570/sy571/sy572/sy573/sy574/sy575/sy576/sy577/sy578/sy580/sy581/sy582/sy583/pwd/sy584/sy585/sy587/sy588/sy589/sy590/sy591/dir//md//////ds/en/sy596/sy597/sy598/sy599/fb/sy600/sy601/fpc/sy602/sy603/sy604/sy605/sy606////////////////////////tt/sy627/sy623/sy621:u,1i,31,3k,3z,4r,5n,8g,8n,9z,ch,ci,ck,hb,hc/sy624/sy628/sy629:hb,hf/sy626/sy631/sy625/sy622:k,w,2w,3q,4c,4n,4o,66,6x,7h,8k,b4,cj,cp,hd,he,hg,hh,hi,hj/sgi:8y,c2,ha,hk/sy632/sy633/sy634:o,1h,hm/sy636/sy637/sy635:m,47,48,49,5q,6v,hp,hq/sy639/sy642/sy641:ds,ht/sy643/sy646/sy647/sy648/sy645/sy649/sy655/sy650/sy651/sy652/sy653/sy654/sgr:4a,4j,5m,5o,5s,6g,ag,an,ar,bf,bi,dy,e2,ga,hl,hn,ho,hr,hv,hz,i0,i2,i6/sy656/hti/hw/sy657/pau/htl/sy658/sy659/sy661/sy662/hc/sy663/sy664/hpr/sy665/sy666/hhr/if/idm//lyr//lp//sy668//mag/mo:1,21,3l,4y,64,6a,6x,af,av,de,hu/gmd/mml//mt/sy671/sy672/mm/sy673/ml//ncs/sy675/sy677/ob/sy678/owc/sy679/sy680/omw/sy681/sy682:ft/pmw/pma/sy689/sy683/sy684//sy686/sy687/sy688/pap/pdg/sy690/sy692/sy693/sy691/sy694/sy695/pdb/sy696/sy697/sy698/pda/sy699/sy700////sy706/sy703/sy704/sy705/ppr/sy707/sy708/sy709/sy710/sy711/pgc/sy712/pgp//sy713//sy715//ppc//ppl/////sy717//sy718//sy719/per/sy720/pti/sy721/pud/py/prt/pal/rap/rss/rvc/rvs/rwl/rl/rw//sy725/sc2:1,j,28,31,4y,5y,6a,aw,lm/sy726/sy727/stx:1,r,1p,31,4y,5e,5k,64,6a,6v,al,ax,cg,l5,lo,lp/sy728//sy729/gpi/sy731/smr/smi/sy732:2i,2k,4x,df/sy733:10,12,47,49,5b,6x,8i,af/sy734/sy735:dh/vd:1,2l,2m,2n,34,6z,7b,8c,8j,ag,an,as,db,di,dt,dx,hz,i1,i3,i4,i5,i8,ly,lz,m0,m1/sy736:m,13,4o,8k,8l,d9,db,dm,dy,hs,jj,lv,lz/sy737:6y,dn/vwr:1,1s,48,5l,an,hc,hq,hv,i0,m1,m3,m4/wrc:1,hr,lp/sci//sy740/sy738/sy741/sir//spr//shi/sem/std/set//ks//sp:5b,5l,76,8c,8e,8i,8o,9f,9g,cw,dp,du,e0,e2,jh,jk//svy/stc/tsw/tcx/ti/tw/tm/tc/tdf/sy743/sy744/sy745/tgi/tmg/tmh/tmi/tv///vef/vw///vlg';
+
+
+</script>
+<script type="text/javascript" src="res/processed-definitions.js"></script>
+<link href="res/styles.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+<script type="text/javascript" src="res/processed-content.js"></script>
+<script type="text/javascript">
+
+var a = pD.prototype;
+var b = function (a) {
+  return new inb(a)
+};
+qD.$a = b(a.va);
+qD.$c = b(a.wa);
+qD.$dh = b(a.Aa);
+qD.$dc = b(a.Ba);
+qD.$dd = b(a.Ea);
+qD.display = b(a.EP);
+qD.$e = b(a.Ha);
+qD[_.Zg] = b(a.Ja);
+qD.$fk = b(a.Ka);
+qD.$g = b(a.La);
+qD.$ia = b(a.M8);
+qD.$ic = b(a.N8);
+qD.$if = b(a.EP);
+qD.$r = b(a.Nfa);
+qD.$sk = b(a.jha);
+qD.$s = b(a.Va);
+qD.$t = b(a.Xa);
+qD.$u = b(a.rb);
+qD.$ua = b(a.wb);
+qD.$uae = b(a.Db);
+qD.$ue = b(a.Hb);
+qD.$up = b(a.Jb);
+qD[_.W] = b(a.Nb);
+qD.$vs = b(a.Rb);
+qD.$c.Gd = 1;
+qD.display.Gd = 1;
+qD.$if.Gd = 1;
+qD.$sk.Gd = 1;
+qD[_.Zg].Gd = 4;
+qD[_.Zg].H = 2;
+qD.$fk.Gd = 4;
+qD.$fk.H = 2;
+qD.$s.Gd = 4;
+qD.$s.H = 3;
+qD.$u.Gd = 3;
+qD.$ue.Gd = 3;
+qD.$up.Gd = 3;
+
+qM.prototype.initialize = function () {
+	var a = new _.iH(window.APP_OPTIONS);
+	_.Zq.Bb().ta(a);
+	var b = new _.iH(window.APP_INITIALIZATION_STATE);
+	this.R = new Mzc(b);
+
+  var c = new eAc(this.R.H);
+
+  var d = c.S.document().createElement(c.S.H[c.T].elements[0]);
+  d.setAttribute("jsl", "$u " + c.T + ";");
+  c.H = d;
+  if (window.document.body) {
+    window.document.body.appendChild(d);
+  }
+
+  c.nb();
+
+  window.google = {};
+
+  this.U = new Vzc(b.H[8], this.R);
+  this.wa(this.R.W)
+};
+
+_.xD.prototype.nb = function (a, b, c) {
+  var f = this.H;
+  if ((f.__cdn && null == Nib) || !f.__cdn) {
+    l = new pD(this.S, b, c);
+    f.__cdn = new LC;
+    f.__cdn.ta(this.R);
+    f.__cdn = new oD(uD(l, f, null), null, new nD(f), f.__cdn, this.T);
+    Jmb(l, f.__cdn);
+  }
+};
+
+
+if (!_.rd.HI) {
+	_.rd.HI = new _.rd;
+}
+
+for (var i = 0; i <= 15; i++) { _.zzz("sy" + i); }
+for (var i = 17; i <= 20; i++) { _.zzz("sy" + i); }
+for (var i = 25; i <= 67; i++) { _.zzz("sy" + i); }
+for (var i = 69; i <= 71; i++) { _.zzz("sy" + i); }
+for (var i = 74; i <= 75; i++) { _.zzz("sy" + i); }
+for (var i = 78; i <= 79; i++) { _.zzz("sy" + i); }
+_.zzz("sy83");
+for (var i = 85; i <= 89; i++) { _.zzz("sy" + i); }
+for (var i = 93; i <= 96; i++) { _.zzz("sy" + i); }
+for (var i = 101; i <= 104; i++) { _.zzz("sy" + i); }
+_.zzz("sy110");
+_.zzz("sy113");
+for (var i = 115; i <= 117; i++) { _.zzz("sy" + i); }
+_.zzz("sy120");
+for (var i = 127; i <= 131; i++) { _.zzz("sy" + i); }
+_.zzz("sy141");
+_.zzz("sy147");
+_.zzz("sy148");
+_.zzz("sy156");
+for (var i = 164; i <= 170; i++) { _.zzz("sy" + i); }
+for (var i = 172; i <= 188; i++) { _.zzz("sy" + i); }
+_.zzz("sy190");
+_.zzz("sy192");
+_.zzz("sy196");
+_.zzz("sy197");
+_.zzz("sy200");
+_.zzz("sy202");
+_.zzz("sy205");
+_.zzz("sy207");
+for (var i = 210; i <= 213; i++) { _.zzz("sy" + i); }
+_.zzz("sy215");
+for (var i = 220; i <= 224; i++) { _.zzz("sy" + i); }
+for (var i = 229; i <= 232; i++) { _.zzz("sy" + i); }
+_.zzz("sy239");
+_.zzz("sy244");
+_.zzz("sy255");
+for (var i = 257; i <= 262; i++) { _.zzz("sy" + i); }
+for (var i = 274; i <= 276; i++) { _.zzz("sy" + i); }
+_.zzz("sy279");
+_.zzz("sy280");
+_.zzz("sy342");
+_.zzz("sy358");
+_.zzz("sy359");
+_.zzz("sy362");
+_.zzz("sy374");
+_.zzz("sy379");
+_.zzz("sy389");
+_.zzz("sy391");
+_.zzz("sy393");
+_.zzz("sy394");
+for (var i = 396; i <= 400; i++) { _.zzz("sy" + i); }
+for (var i = 402; i <= 424; i++) { _.zzz("sy" + i); }
+_.zzz("sy426");
+_.zzz(_.Ya);
+
+</script>
+<base href="https://www.google.com/maps/">
+</body>
+</html>

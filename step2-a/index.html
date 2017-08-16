@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript">
+
+
+var map_url = ["/maps/_/js/","m","maps.m.en.HbC7FRYovGY.O","ACT90oEkumd7ZZHZBfs7AsobzkUGs6LJNA"]; // Unsure of its real purpose
+window.APP_OPTIONS=[,,,[,,,,,,[[""],,[""],,,,,"/maps/vt"],,,,,,,"//kh.google.com/rt/earth"],,,,,,,,,,,,,,,,,,,,,,[1,],,,,,,,,,,,,,,map_url,,,,,,,,,,,,,,,,,,,1];
+
+
+
+
+
+
+var zooms = {
+  tree: 100,
+  building: 300,
+  street: 1000,
+  town: 10000,
+  city: 80000,
+  state: 3000000,
+  nation: 9000000,
+  globe: 40000000,
+};
+var places = {
+  TopOfTheWorldYorkPA: {
+    lat: 39.930,
+    lon: -76.728,
+    heading: 315,
+    tilt: 80,
+    height: 150,
+  },
+  YorkCollege: {
+    lat: 39.9458,
+    lon: -76.7289,
+    heading: 5,
+    tilt: 30,
+    height: zooms.building,
+  },
+};
+var place = places.YorkCollege;
+var lat = place.lat;
+var lon = place.lon;
+var heading = place.heading; // North is 0. East is 90.
+var tilt = place.tilt; // Straight down is 0. Looking at horizon is 90.
+var height = place.height; // Distance above ground. Is this meters?
+window.APP_INITIALIZATION_STATE=[
+  [[28.0,lon,lat]],
+  [[["m"]]],
+  ,,,
+  [,,[3,[,lon,lat,,height,,20.0,heading,tilt]]],
+  ,,
+  [59,60,61,63,66,65]
+];
+
+this._ = this._ || {};
+var window = this;
+
+window.globals = {};
+window.globals.ErrorHandler = {};
+window.globals.ErrorHandler.log = function(a) {
+  return a;
+};
+_._DumpException = function(a) {
+  throw a;
+};
+
+window.history.pushState = function() {};
+window.history.replaceState = function() {};
+
+</script>
+<link href="css/styles.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+<script type="text/javascript" src="js/10-processed-var.js"></script>
+<script type="text/javascript" src="js/20-literals.js"></script>
+<script type="text/javascript" src="js/50-misc.js"></script>
+<script type="text/javascript" src="js/52-misc.js"></script>
+<script type="text/javascript" src="js/54-misc.js"></script>
+<script type="text/javascript" src="js/56-misc.js"></script>
+<script type="text/javascript" src="js/58-misc.js"></script>
+
+<script type="text/javascript">
+this._=this._||{};
+var window=this;
+</script>
+<script type="text/javascript" src="js/90-other-nodes.js"></script>
+
+<base href="https://www.google.com/maps/">
+</body>
+</html>
