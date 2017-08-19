@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# http://stackoverflow.com/questions/59895
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+FILE=$1
+if [ -z "$FILE" ]; then
+FILE="$DIR/index.html"
+fi
+chromium --user-data-dir --disable-web-security $FILE &
