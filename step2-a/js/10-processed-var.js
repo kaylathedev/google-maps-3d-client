@@ -2044,7 +2044,7 @@ var LJa = function (a, b, c, d, f) {
         else if (a = _.e + a, c == _.Db) {
             var g = a;
             b = (0, window.encodeURIComponent)(g).replace(/%20/g, _.ma);
-            var h = b.match(/%[89AB]/gi), g = g.length + (h ? h.length : 0);
+            var h = b.match(/%[89AB]/ig), g = g.length + (h ? h.length : 0);
             if (4 * Math.ceil(g / 3) - (3 - g % 3) % 3 < b.length) {
                 c = [];
                 for (g = b = 0; g < a.length; g++)

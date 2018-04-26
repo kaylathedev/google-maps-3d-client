@@ -36,7 +36,7 @@ var isMembersMatching = function(member, regexes) {
   return isMembersMatching(member.object, new_regexes);
 };
 
-var original_script = fs.readFileSync('js/original.js');
+var original_script = fs.readFileSync('js/original.js', 'utf-8');
 
 // These arrays hold the nodes that will be converted into code later.
 var variable_declarations = [];
